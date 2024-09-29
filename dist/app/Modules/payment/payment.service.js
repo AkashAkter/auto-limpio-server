@@ -15,12 +15,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.paymentService = exports.failedPayment = exports.createPayment = void 0;
 const fs_1 = require("fs");
 const path_1 = require("path");
+const payment_model_1 = __importDefault(require("./payment.model"));
 const booking_model_1 = __importDefault(require("../booking/booking.model"));
 const slot_model_1 = __importDefault(require("../slot/slot.model"));
-const payment_model_1 = __importDefault(require("./payment.model"));
+// import { IPaymentPayload } from "./payment.interface";
+// import axios from "axios";
+// import jwt from "jsonwebtoken";
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const createPayment = (amount, transactionId) => __awaiter(void 0, void 0, void 0, function* () {
     yield payment_model_1.default.create({
-        amount: amount,
+        amount,
         transactionId,
         status: "Paid",
     });
