@@ -13,7 +13,7 @@ export const createPayment = async (amount: number, transactionId: string) => {
 
   const filePath = join(__dirname, "../../templates/success.html");
   let file = readFileSync(filePath, "utf-8");
-  file = file.replace("{{link}}", "http://localhost:5000/");
+  file = file.replace("{{link}}", "http://localhost:5173/");
 
   return file;
 };
@@ -26,7 +26,7 @@ export const failedPayment = async (slot: string) => {
 
   const filePath = join(__dirname, "../../templates/error.html");
   let file = readFileSync(filePath, "utf-8");
-  file = file.replace("{{link}}", "http://localhost:5000/");
+  file = file.replace("{{link}}", "http://localhost:5173/");
   return file;
 };
 

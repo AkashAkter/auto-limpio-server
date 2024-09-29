@@ -34,9 +34,9 @@ const initiatePayment = (payload, slotId) => __awaiter(void 0, void 0, void 0, f
             currency: "BDT",
             amount,
             tran_id,
-            success_url: `http://localhost:5000/api/payment/success?pt=${PT}`,
-            fail_url: `http://localhost:5000/api/payment/fail?pt=${PT}`,
-            cancel_url: `http://localhost:5000/api/payment/fail?pt=${PT}`,
+            success_url: `https://auto-limpio-server.vercel.app/api/payment/success?pt=${PT}`,
+            fail_url: `https://auto-limpio-server.vercel.app/api/payment/fail?pt=${PT}`,
+            cancel_url: `https://auto-limpio-server.vercel.app/api/payment/fail?pt=${PT}`,
             desc: "Course Fee",
             type: "json",
         });

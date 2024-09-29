@@ -26,7 +26,7 @@ const createPayment = (amount, transactionId) => __awaiter(void 0, void 0, void 
     });
     const filePath = (0, path_1.join)(__dirname, "../../templates/success.html");
     let file = (0, fs_1.readFileSync)(filePath, "utf-8");
-    file = file.replace("{{link}}", "http://localhost:5000/");
+    file = file.replace("{{link}}", "http://localhost:5173/");
     return file;
 });
 exports.createPayment = createPayment;
@@ -35,7 +35,7 @@ const failedPayment = (slot) => __awaiter(void 0, void 0, void 0, function* () {
     yield slot_model_1.default.findOneAndUpdate({ _id: slot }, { $set: { isBooked: "available" } });
     const filePath = (0, path_1.join)(__dirname, "../../templates/error.html");
     let file = (0, fs_1.readFileSync)(filePath, "utf-8");
-    file = file.replace("{{link}}", "http://localhost:5000/");
+    file = file.replace("{{link}}", "http://localhost:5173/");
     return file;
 });
 exports.failedPayment = failedPayment;
